@@ -1,21 +1,21 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import NavBar from './components/NavBar';
+import Navigation from './components/Navigation';  // File exists as Navigation.js
 import Home from './pages/Home';
 import About from './pages/About';
-import UserList from './pages/UserList';
-import UserProfile from './pages/UserProfile';
+import Users from './pages/Users';  // File exists as Users.js
+import UserDetails from './pages/UserDetails';  // File exists as UserDetails.js
 
 export default function App() {
   return (
     <div className="app">
-      <NavBar />
+      <Navigation />
       <main className="container">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/users" element={<UserList />} />
-          <Route path="/users/:id" element={<UserProfile />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/users/:id" element={<UserDetails />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
